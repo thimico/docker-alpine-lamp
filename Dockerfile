@@ -5,9 +5,7 @@ MAINTAINER thimico
 ENV TIMEZONE America/Bahia
 
 # install mysql, apache and php and php extensions, tzdata, wget
-RUN echo "@community http://dl-cdn.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories && \
-    apk add --update \
-    mysql mysql-client \
+RUN apk-install mysql mysql-client \
     apache2 \
     curl wget \
     tzdata \
