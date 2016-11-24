@@ -1,11 +1,15 @@
-From thimico/alpine:latest
+From alpine:3.4
 MAINTAINER thimico
 
 # Timezone
 ENV TIMEZONE America/Bahia
 
+# RUN sed -i 's#dl-cdn\.alpinelinux\.org#mirrors\.aliyun\.com#' /etc/apk/repositories
+
 # install mysql, apache and php and php extensions, tzdata, wget
-RUN apk-install mysql mysql-client \
+RUN echo "@community http://dl-cdn.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories && \
+    apk add --update \
+    mysql mysql-client \
     apache2 \
     curl wget \
     tzdata \
