@@ -41,6 +41,7 @@ RUN echo "@community http://dl-cdn.alpinelinux.org/alpine/edge/community" >> /et
     php5-dom \
     php5-xml \
     php5-iconv \
+    bash \
     php5-xdebug@community
 
 RUN curl -sS https://getcomposer.org/installer | \
